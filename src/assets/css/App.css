@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+}
+
+.content {
+  margin: 1em;
+}
+
+.save-area {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid #8a979e;
+  z-index: 10;
+
+  .update {
+    margin-left: auto;
+    order: 2;
+  }
+}
+
+
