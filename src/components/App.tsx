@@ -103,7 +103,7 @@ function App() {
             </div>
 
             <div className="save-area">
-                <input className="input is-small" placeholder="Handicap" type="number" style={{width: "37vw"}} value={handicap} onChange={handleUpdateHandicap}/>
+                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap} onChange={handleUpdateHandicap}/>
                 <div className="tag is-info">Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
                 <div className="tag is-success">Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
             </div>
