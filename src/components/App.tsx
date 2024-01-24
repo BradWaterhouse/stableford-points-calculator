@@ -3,6 +3,7 @@ import '../assets/css/App.css';
 import {Hole} from "./Hole/Hole";
 import bullwellForest from "../courses/bullwellForest.json";
 import ramsdale from "../courses/ramsdale.json";
+import rufford from "../courses/rufford.json";
 import {calculate} from "../helpers/CalculatePoints";
 
 interface ScoresState {
@@ -15,7 +16,8 @@ interface Course {
 
 const courses: Record<string, Course> = {
     "Bullwell Forest": bullwellForest,
-    "Ramsdale": ramsdale
+    "Ramsdale": ramsdale,
+    "Rufford": rufford
 };
 
 function App() {
@@ -73,6 +75,7 @@ function App() {
                             <option value="none">Not selected</option>
                             <option value="Bullwell Forest">Bullwell Forest</option>
                             <option value="Ramsdale">Ramsdale (Steely)</option>
+                            <option value="Rufford">Rufford</option>
                         </select>
                     </div>
                 </div>
