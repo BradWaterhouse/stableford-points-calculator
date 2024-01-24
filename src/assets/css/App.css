@@ -33,7 +33,7 @@
 
 select {
   width: 100vw;
-  text-align: center;
+  text-align: center !important;
   font-weight: bold;
   font-size: 1.2em !important;
 }
