@@ -16,6 +16,6 @@ code {
     monospace;
 }
 
-h1, h2, h3, span, p, li, button, label, div, input {
-  font-family: 'Josefin Sans';
+h1, h2, h3, span, p, li, button, label, div, input, select {
+  font-family: 'Josefin Sans' !important;
 }

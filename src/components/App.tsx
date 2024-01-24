@@ -80,7 +80,6 @@ function App() {
                 {selectedCourse !== "none" ? (
 
                     <div className="course">
-                        <h1 className="title has-text-centered mt-5">{selectedCourse}</h1>
 
                         <hr />
 
