@@ -14,8 +14,8 @@ interface Course {
 }
 
 const courses: Record<string, Course> = {
-    bullwellForest,
-    ramsdale
+    "bullwellForest": bullwellForest,
+    "ramsdale": ramsdale
 };
 
 function App() {
@@ -56,10 +56,10 @@ function App() {
     return (
         <div className="App">
             <div className="header">
-                <section className="hero is-link">
+                <section className="hero" style={{backgroundColor: "#49a282"}}>
                     <div className="hero-body">
-                        <p className="title">Stableford Handicap Calculator</p>
-                        <p className="subtitle">Nottinghamshire Courses.</p>
+                        <p className="title has-text-white">Stableford Handicap Calculator</p>
+                        <p className="subtitle has-text-white">Nottinghamshire Courses.</p>
                     </div>
                 </section>
             </div>
