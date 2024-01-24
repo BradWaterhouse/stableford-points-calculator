@@ -1,9 +1,9 @@
-export const calculate = (par: number, score: number): number => {
-    const grossScore = score - par;
-
+export const calculate = (par: number, si: number, handicap: number, score: number): number => {
     if (score === 0 || isNaN(score)) {
         return 0;
     }
+
+    const grossScore = (score - par) - calculateShotsBasedOnHandicap(handicap, si);
 
     const scoreMappings: Record<string, number> = {
         '2': 0,
@@ -13,7 +13,25 @@ export const calculate = (par: number, score: number): number => {
         '-2': 4,
         '-3': 5,
         '-4': 6,
+        '-5': 6,
+        '-6': 6,
     };
 
     return scoreMappings[grossScore.toString()] || 0;
 };
+
+const calculateShotsBasedOnHandicap = (handicap: number, si: number): number => {
+    let shots: number = 0;
+
+    if (handicap >= 18) {
+        shots += 1;
+        handicap -= 18;
+    }
+
+    if (handicap >= 0 && si <= handicap) {
+        shots += 1;
+    }
+
+    return shots;
+};
+

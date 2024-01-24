@@ -14,8 +14,8 @@ interface Course {
 }
 
 const courses: Record<string, Course> = {
-    "bullwellForest": bullwellForest,
-    "ramsdale": ramsdale
+    "Bullwell Forest": bullwellForest,
+    "Ramsdale": ramsdale
 };
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
             const hole = score[0];
             const grossScore = score[1];
 
-            total += calculate(typedCourse[hole].par, grossScore)
+            total += calculate(typedCourse[hole].par, typedCourse[hole].si, handicap, grossScore)
         });
 
         return total;
@@ -66,13 +66,12 @@ function App() {
 
             <div className="content pb-6">
                 <div className="courses has-text-centered">
-                    <h1 className="title">Select Course</h1>
 
                     <div className="select mt-2">
                         <select onChange={handleUpdateSelectedCourse} defaultValue={"none"} value={selectedCourse}>
                             <option value="none">Not selected</option>
-                            <option value="bullwellForest">Bullwell Forest</option>
-                            <option value="ramsdale">Ramsdale</option>
+                            <option value="Bullwell Forest">Bullwell Forest</option>
+                            <option value="Ramsdale">Ramsdale (Steely)</option>
                         </select>
                     </div>
                 </div>
@@ -80,7 +79,7 @@ function App() {
                 {selectedCourse !== "none" ? (
 
                     <div className="course">
-                        <h1 className="title has-text-centered mt-5">Bullwell Forest</h1>
+                        <h1 className="title has-text-centered mt-5">{selectedCourse}</h1>
 
                         <hr />
 
@@ -104,7 +103,7 @@ function App() {
             </div>
 
             <div className="save-area">
-                <input className="input is-small" placeholder="Handicap" type="number" style={{width: "37vw"}} onChange={handleUpdateHandicap}/>
+                <input className="input is-small" placeholder="Handicap" type="number" style={{width: "37vw"}} value={handicap} onChange={handleUpdateHandicap}/>
                 <div className="tag is-info">Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
                 <div className="tag is-success">Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
             </div>
