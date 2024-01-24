@@ -20,7 +20,7 @@ const courses: Record<string, Course> = {
 
 function App() {
     const [selectedCourse, setSelectedCourse] = useState<string>("none");
-    const [handicap, setHandicap] = useState<number>(36);
+    const [handicap, setHandicap] = useState<number>(-1);
     const [scores, setScores] = useState<ScoresState>({
         1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0
     });
@@ -104,7 +104,7 @@ function App() {
             </div>
 
             <div className="save-area">
-                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap}/>
+                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap} max={36}/>
                 <div className="tag is-info">Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
                 <div className="tag is-success">Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
             </div>
