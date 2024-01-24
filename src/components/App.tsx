@@ -68,7 +68,7 @@ function App() {
             <div className="content pb-6">
                 <div className="courses has-text-centered">
 
-                    <div className="select mt-2">
+                    <div className="select is-rounded mt-2">
                         <select onChange={handleUpdateSelectedCourse} defaultValue={"none"} value={selectedCourse}>
                             <option value="none">Not selected</option>
                             <option value="Bullwell Forest">Bullwell Forest</option>
