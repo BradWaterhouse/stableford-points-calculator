@@ -104,9 +104,11 @@ function App() {
             </div>
 
             <div className="save-area">
-                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap} max={36}/>
-                <div className="tag is-info">Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
-                <div className="tag is-success">Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
+                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "31vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap} max={36}/>
+                <div className="is-pulled-right">
+                <div className="tag is-info mr-2" style={{fontSize: "1em"}}>Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
+                <div className="tag is-success" style={{fontSize: "1em"}}>Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
+                </div>
             </div>
 
         </div>
