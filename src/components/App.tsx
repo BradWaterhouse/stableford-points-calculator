@@ -39,7 +39,8 @@ function App() {
         }
     };
 
-    const handleUpdateHandicap = (event: ChangeEvent<HTMLInputElement>): void => setHandicap(event.target.valueAsNumber);
+    const handleUpdateHandicap = (event: ChangeEvent<HTMLInputElement>): void =>
+        setHandicap(isNaN(parseInt(event.target.value)) ? -1 : parseInt(event.target.value));
 
     const calculateScores = (): number => {
         let total = 0;
@@ -103,7 +104,7 @@ function App() {
             </div>
 
             <div className="save-area">
-                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap} onChange={handleUpdateHandicap}/>
+                <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "37vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap}/>
                 <div className="tag is-info">Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
                 <div className="tag is-success">Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
             </div>
