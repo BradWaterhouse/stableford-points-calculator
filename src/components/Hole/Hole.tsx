@@ -22,7 +22,7 @@ export const Hole: FC<Props> = (props: Props): ReactElement => {
         <button
             className="button is-small mr-3"
             style={{
-                borderRadius: "15%",
+                borderRadius: "50%",
                 color: selectedScore === value ? "#ffffff" : "#49a282",
                 backgroundColor: selectedScore === value ? "#595555" : "#ffffff",
                 height: "3em", width: "3em"
