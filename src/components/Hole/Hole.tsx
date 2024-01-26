@@ -1,5 +1,6 @@
 import React, { FC, ReactElement, useState } from "react";
 import '../../assets/css/App.css';
+import {calculate} from "../../helpers/CalculatePoints";
 
 interface Props {
     name: string;
@@ -7,6 +8,7 @@ interface Props {
     strokeIndex: number;
     par: number;
     score: number;
+    handicap: number
     updateScore: (holeNumber: number, score: number) => void;
 }
 
@@ -33,9 +35,10 @@ export const Hole: FC<Props> = (props: Props): ReactElement => {
     );
 
     return (
-        <div className="column is-3 has-background">
+        <div className="column is-4 is-6-tablet is-4-desktop has-background">
             <div className="card" style={{ backgroundColor: "#49a282" }}>
                 <div className="card-content">
+                    <div className="tag" style={{position: "absolute", left: "3%", top: "6%", color: "#49a282"}}>Points: {calculate(props.par, props.strokeIndex, props.handicap, selectedScore)}</div>
                     <h4 className="subtitle has-text-white has-text-centered mb-2" style={{fontSize: "1.55em"}}>
                         #{props.number} Par {props.par} (SI {props.strokeIndex})
                         <hr className="m-2 mb-4"/>

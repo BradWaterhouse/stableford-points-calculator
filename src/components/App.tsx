@@ -96,6 +96,7 @@ function App() {
                                       strokeIndex={typedCourse[holeNumber].si}
                                       par={typedCourse[holeNumber].par}
                                       score={scores[parseInt(holeNumber)]}
+                                      handicap={handicap}
                                       updateScore={updateScore}
                                 />
                             )}
