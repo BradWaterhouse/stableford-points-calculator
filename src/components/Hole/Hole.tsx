@@ -36,7 +36,7 @@ export const Hole: FC<Props> = (props: Props): ReactElement => {
         <div className="column is-3 has-background">
             <div className="card" style={{ backgroundColor: "#49a282" }}>
                 <div className="card-content">
-                    <h4 className="subtitle has-text-white has-text-centered mb-2">
+                    <h4 className="subtitle has-text-white has-text-centered mb-2" style={{fontSize: "1.55em"}}>
                         #{props.number} Par {props.par} (SI {props.strokeIndex})
                         <hr className="m-2 mb-4"/>
                     </h4>
