@@ -60,7 +60,7 @@ function App() {
         return total;
     };
 
-    const calculateCoursePar = () => {
+    const calculateCoursePar = (): number => {
         return Object.values(typedCourse).flat().reduce((sum: number, element: {si: number, par: number}) => sum + element.par, 0);
     }
 
