@@ -60,6 +60,10 @@ function App() {
         return total;
     };
 
+    const calculateCoursePar = () => {
+        return Object.values(typedCourse).flat().reduce((sum: number, element: {si: number, par: number}) => sum + element.par, 0);
+    }
+
     return (
         <div className="App">
             <div className="header">
@@ -87,11 +91,9 @@ function App() {
                 </div>
 
                 {selectedCourse !== "none" ? (
-
                     <div className="course">
 
                         <hr />
-
                         <div className="columns is-multiline is-centered">
                             {Object.keys(scores).map((holeNumber: string) =>
                                 <Hole name={"Hole " + holeNumber}
@@ -107,15 +109,14 @@ function App() {
                     </div>) : <h3 className="has-text-centered">Please Select a Course...</h3>}
 
                 <div className="handicap">
-
                 </div>
-
             </div>
 
             <div className="save-area">
                 <input className="input is-small" placeholder="Handicap" type="tel" style={{width: "31vw"}} value={handicap === -1 ? "" : handicap} onChange={handleUpdateHandicap} max={36}/>
                 <div className="is-pulled-right">
-                <div className="tag is-info mr-2" style={{fontSize: "1em"}}>Net Score: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
+                <div className="tag is-warning mr-2" style={{fontSize: "1em"}}>P: {typedCourse === undefined ? 0 : calculateCoursePar()}</div>
+                <div className="tag is-info mr-2" style={{fontSize: "1em"}}>S: {Object.values(scores).reduce((acc: number, score: number) => acc + score, 0)}</div>
                 <div className="tag is-success" style={{fontSize: "1em"}}>Points: {selectedCourse !== "none" ? calculateScores() : 0}</div>
                 </div>
             </div>
