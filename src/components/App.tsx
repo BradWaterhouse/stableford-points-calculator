@@ -5,6 +5,7 @@ import bullwellForest from "../courses/bullwellForest.json";
 import ramsdale from "../courses/ramsdale.json";
 import rufford from "../courses/rufford.json";
 import ramsdaleParThree from "../courses/ramsdaleParThree.json";
+import bondhay from "../courses/bondhay.json";
 import {calculate} from "../helpers/CalculatePoints";
 
 interface ScoresState {
@@ -17,9 +18,10 @@ interface Course {
 
 const courses: Record<string, Course> = {
     "Bullwell Forest": bullwellForest,
+    "Bondhay": bondhay,
     "Ramsdale": ramsdale,
     "Rufford": rufford,
-    "Ramsdale Par Three": ramsdaleParThree
+    "Ramsdale Par Three": ramsdaleParThree,
 };
 
 function App() {
@@ -73,9 +75,10 @@ function App() {
                 <div className="courses has-text-centered">
 
                     <div className="select is-rounded mt-2">
-                        <select onChange={handleUpdateSelectedCourse} defaultValue={"none"} value={selectedCourse}>
+                        <select onChange={handleUpdateSelectedCourse} defaultValue="none" value={selectedCourse}>
                             <option value="none">Not selected</option>
                             <option value="Bullwell Forest">Bullwell Forest</option>
+                            <option value="Bondhay">Bondhay</option>
                             <option value="Ramsdale">Ramsdale (Steely)</option>
                             <option value="Ramsdale Par Three">Ramsdale (Lee)</option>
                             <option value="Rufford">Rufford</option>
