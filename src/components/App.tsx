@@ -96,7 +96,8 @@ function App() {
                         <hr />
                         <div className="columns is-multiline is-centered">
                             {Object.keys(scores).map((holeNumber: string) =>
-                                <Hole name={"Hole " + holeNumber}
+                                <Hole key={holeNumber}
+                                      name={"Hole " + holeNumber}
                                       number={parseInt(holeNumber)}
                                       strokeIndex={typedCourse[holeNumber].si}
                                       par={typedCourse[holeNumber].par}

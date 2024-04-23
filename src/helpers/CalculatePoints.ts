@@ -12,9 +12,9 @@ export const calculate = (par: number, si: number, handicap: number, score: numb
         '-1': 3,
         '-2': 4,
         '-3': 5,
-        '-4': 6,
-        '-5': 6,
-        '-6': 6,
+        '-4': 5,
+        '-5': 5,
+        '-6': 5,
     };
 
     return scoreMappings[grossScore.toString()] || 0;
